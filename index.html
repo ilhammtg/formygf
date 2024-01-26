@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Girlfriend</title>
+    <style>
+        body {
+            background-color: #111;
+            background-image: url('your-background-image.jpg'); /* Replace with your image URL */
+            background-size: cover;
+            background-position: center;
+            animation: fade-in 5s forwards;
+            display: flex;
+            flex-direction: column; /* Ensure content is stacked vertically */
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Brush Script MT', cursive;
+            color: white;
+        }
+
+        h1 {
+            font-size: 72px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: fade-in 5s 2s forwards;
+            text-align: center;
+            line-height: 1.2;
+            margin: 0;
+        }
+
+        p {
+            font-size: 32px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        audio {
+            width: 100%;
+            max-width: 300px;
+            margin: 20px 0; /* Adjust margin for better spacing */
+        }
+
+        @keyframes fade-in {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <h1>I Love You, Embun Lita ❤️</h1>
+    <p>Semangat untuk besok nya, ya sayang!</p>
+    <audio id="background-music" loop>
+        <source src="jaz1.mp3" type="audio/mpeg">
+    </audio>
+    <button onclick="toggleAudio()">Music Play</button>
+
+    <script>
+        var audio = document.getElementById('background-music');
+
+        function toggleAudio() {
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
+        }
+
+        // Check if the browser supports the 'canplaythrough' event
+        if ('canPlayType' in audio) {
+            audio.addEventListener('canplaythrough', function() {
+                audio.play();
+            });
+        } else {
+            // Fallback for browsers that do not support the 'canplaythrough' event
+            audio.play();
+        }
+    </script>
+</body>
+</html>
